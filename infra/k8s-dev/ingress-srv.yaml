@@ -25,10 +25,10 @@ spec:
                 name: compilers-srv
                 port:
                   number: 3000
-          # - path: /?(.*) # Will catch all, that's why it's at the bottom of all paths
-          #   pathType: Prefix
-          #   backend:
-          #     service:
-          #       name: different-srv
-          #       port:
-          #         number: 3000
+          - path: /?(.*) # Will catch all, that's why it's at the bottom of all paths
+            pathType: Prefix
+            backend:
+              service:
+                name: questions-srv
+                port:
+                  number: 3000
