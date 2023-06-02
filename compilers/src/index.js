@@ -8,6 +8,13 @@ app.get("/api/compilers/java", (req, res) => {
   });
 });
 
+app.get("/api/compilers/python", (req, res) => {
+  res.json({
+    compiler: "python3",
+    output: "Hello, xCodeClazz",
+  });
+});
+
 app.listen(3000, () => {
   console.log("App is running on port 3000");
 });
