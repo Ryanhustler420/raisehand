@@ -15,7 +15,7 @@ spec:
     - www.raisehand.software
   acme:
     config:
-      - http01:
+      - dns01:
           ingressClass: nginx
         domains:
           - raisehand.software

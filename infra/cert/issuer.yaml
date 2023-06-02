@@ -10,4 +10,4 @@ spec:
     email: "myemailaddress.io@gmail.com"
     privateKeySecretRef:
       name: letsencrypt-prod
-    http01: {}
+    dns01: {}
