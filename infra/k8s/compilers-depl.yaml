@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: compilers-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: compilers
+  template:
+    metadata:
+      labels:
+        app: compilers
+    spec:
+      containers:
+      - name: compilers
+        image: gupta840/raisehand-compilers
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: compilers-srv
+spec:
+  selector:
+    app: compilers
+  ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: compilers
